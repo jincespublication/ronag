@@ -13,7 +13,7 @@ Version: 1.0
 ----------------------------------------------------------------------------- */
 
 .why{
-  background: linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.85)),url(../img/im3.jpg) center/cover;
+  background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),url(../img/im3.jpg) center/cover;
   height: 40vh;
   display:flex;
   align-items: center;
