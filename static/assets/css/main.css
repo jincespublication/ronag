@@ -52,17 +52,7 @@ Version: 1.0
   gap: 2em;
   line-height: 2em;
 }
-.welc-img div{
-  max-width: 500px;
-  min-width: 200px;
-}
-.welc-img img{
-  max-width: 500px;
-  min-width: 200px;
-  object-fit: contain;
-  object-position: center;
 
-}
 
 .why-info div{
   max-width: 500px;
@@ -268,11 +258,31 @@ h4, .h4 {
     margin: -40px 0px 50px 0px;
     /* background:red; */
   }
+  .welc-img div{
+    /* max-width: 400px; */
+    min-width: 200px;
+  }
+  .welc-img img{
+    min-width: 200px;
+    object-fit: contain;
+    object-position: center;
+  
+  }
 }
 
 @media only screen and (min-width: 575.96px) {
   .homepage-bg-1 {
     background-image: url("../img/im6.jpg");
+  }
+  .welc-img div{
+    max-width: 500px;
+    /* min-width: 200px; */
+  }
+  .welc-img img{
+    max-width: 500px;
+    object-fit: contain;
+    object-position: center;
+  
   }
 }
 
