@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import *
 
 # Create your views here.
+posts = Post.objects.all()
+post = {"posts": posts}
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', post)
 
 def about(request):
     team = Team.objects.all()
@@ -14,10 +16,12 @@ def contact(request):
     return render(request, 'contact.html')
 
 def news(request):
-    return render(request, 'news.html')
+    return render(request, 'news.html', post)
 
-def singleNews(request):
-    return render(request, 'singleNews.html')
+def singleNews(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    context = {"post": post}
+    return render(request, 'singleNews.html', context)
 
 def singleProduct(request):
     return render(request, 'singleProduct.html')

@@ -11,4 +11,5 @@ urlpatterns = [
     path("news.html", views.news, name="news.html"),
     path("singleNews.html", views.singleNews, name="singleNews.html"),
     path("singleProduct.html", views.singleProduct, name="singleProduct.html"),
+    path("singleNews.html/<int:post_id>", views.singleNews, name="singleNews")
 ]
