@@ -22,7 +22,7 @@ class Team(models.Model):
     
 
 class Post(models.Model):
-    title = models.CharField(max_length = 40)
+    title = models.CharField(max_length = 150)
     paragraph1 = models.CharField(max_length = 1000, null=True, blank=True)
     paragraph2 = models.CharField(max_length = 1000, null=True, blank=True)
     paragraph3 = models.CharField(max_length = 1000, null=True, blank=True)
