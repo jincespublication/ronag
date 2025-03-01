@@ -253,6 +253,11 @@ h4, .h4 {
   .homepage-bg-1 {
     background-image: url("../img/im0.jpg");
   }
+
+  .breadcrumb-bg-contact{
+    background-image: url("../img/contact_us_2.jpg");
+  }
+  
   .mt-150 .description{
     margin: -40px 0px 50px 0px;
     /* background:red; */
@@ -273,6 +278,11 @@ h4, .h4 {
   .homepage-bg-1 {
     background-image: url("../img/im6.jpg");
   }
+
+  .breadcrumb-bg-contact{
+    background-image: url("../img/contact_us.jpg");
+  }
+  
   .welc-img div{
     max-width: 500px;
     /* min-width: 200px; */
@@ -628,11 +638,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 }
 
 .breadcrumb-bg-about{
-  background-image: url("../img/breadcrumb-bg.jpg");
-}
-
-.breadcrumb-bg-contact{
-  background-image: url("../img/contact_us.jpg");
+  background-image: url("../img/about.jpg");
 }
 
 .breadcrumb-bg-news{
