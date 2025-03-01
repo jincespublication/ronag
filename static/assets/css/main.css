@@ -627,8 +627,16 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
   margin-bottom: 80px;
 }
 
-.breadcrumb-bg {
+.breadcrumb-bg-about{
   background-image: url("../img/breadcrumb-bg.jpg");
+}
+
+.breadcrumb-bg-contact{
+  background-image: url("../img/contact_us.jpg");
+}
+
+.breadcrumb-bg-news{
+  background-image: url("../img/contact_us.jpg");
 }
 
 .breadcrumb-text p {
