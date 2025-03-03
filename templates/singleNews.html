@@ -2,14 +2,14 @@
 {% load static %}
 {% block content %}
 	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section breadcrumb-bg">
-		<img src={{post.image1}} alt="">
+	<div style="background-image: url('{{ post.image1.url }}'), url('{% static 'media/posts/{{post.image1.url}}.jpg' %}');" class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>Read the Details</p>
-						<h1>Single Article</h1>
+						{% comment %} <h1>Single Article</h1> {% endcomment %}
+						<h1>{{post.title}}</h1>
 					</div>
 				</div>
 			</div>
@@ -24,7 +24,9 @@
 				<div class="col-lg-8">
 					<div class="single-article-section">
 						<div class="single-article-text">
-							<div class="single-artcile-bg"><img src={{post.image1}} alt=""></div>
+							<div class="single-artcile-bg" >
+								<img style="height: 100%; width: 100%; object-fit: cover; object-position: center;" src="{{post.image1.url}}" alt="">
+							</div>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> {{user}}</span>
 								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
@@ -32,7 +34,15 @@
 							<h2>{{post.title}}</h2>
 							<p>{{post.paragraph1}}</p>
 							<p>{{post.paragraph2}}</p>
-							<div class="single-artcile-bg"><img src={{post.image2}} alt=""></div>
+							{% if post.image2 %}
+							<div class="single-artcile-bg">
+								<img style="height: 100%; width: 100%; object-fit: cover; object-position: center;" src="{{post.image2.url}}" alt="">
+							</div>
+							{% else %}
+							<div>
+								sdf
+							</div>
+							{% endif %}
 							<p>{{post.paragraph3}}</p>
 						</div>
 
@@ -89,23 +99,12 @@
 						<div class="recent-posts">
 							<h4>Recent Posts</h4>
 							<ul>
-								<li><a href="singleNews.html">You will vainly look for fruit on it in autumn.</a></li>
-								<li><a href="singleNews.html">A man's worth has its season, like tomato.</a></li>
-								<li><a href="singleNews.html">Good thoughts bear good fresh juicy fruit.</a></li>
-								<li><a href="singleNews.html">Fall in love with the fresh orange</a></li>
-								<li><a href="singleNews.html">Why the berries always look delecious</a></li>
+								{% for post in posts %}
+								<li><a href="singleNews.html">{{post.title}}</a></li>
+								{% endfor %}
 							</ul>
 						</div>
-						<div class="archive-posts">
-							<h4>Archive Posts</h4>
-							<ul>
-								<li><a href="singleNews.html">JAN 2019 (5)</a></li>
-								<li><a href="singleNews.html">FEB 2019 (3)</a></li>
-								<li><a href="singleNews.html">MAY 2019 (4)</a></li>
-								<li><a href="singleNews.html">SEP 2019 (4)</a></li>
-								<li><a href="singleNews.html">DEC 2019 (3)</a></li>
-							</ul>
-						</div>
+						
 						<div class="tag-section">
 							<h4>Tags</h4>
 							<ul>
@@ -117,11 +116,10 @@
 								<li><a href="singleNews.html">Forests</a></li>
 							</ul>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end single article section -->
-
 {% endblock content %}

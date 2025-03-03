@@ -20,7 +20,7 @@ def news(request):
 
 def singleNews(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    context = {"post": post}
+    context = {"post": post, "posts": posts}
     return render(request, 'singleNews.html', context)
 
 def singleProduct(request):

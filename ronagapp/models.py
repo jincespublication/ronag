@@ -7,7 +7,7 @@ class Team(models.Model):
     name = models.CharField(max_length = 40)
     profile = models.CharField(max_length = 200)
     description = models.CharField(max_length = 1000, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True, upload_to="media/team/")
+    image = models.ImageField(null=True, blank=True, upload_to="team/")
 
     def __str__(self):
         return self.name
@@ -26,8 +26,8 @@ class Post(models.Model):
     paragraph1 = models.CharField(max_length = 1000, null=True, blank=True)
     paragraph2 = models.CharField(max_length = 1000, null=True, blank=True)
     paragraph3 = models.CharField(max_length = 1000, null=True, blank=True)
-    image1 = models.ImageField(null=True, blank=True, upload_to="media/posts/")
-    image2 = models.ImageField(null=True, blank=True, upload_to="media/posts/")
+    image1 = models.ImageField(null=True, blank=True, upload_to="posts/")
+    image2 = models.ImageField(null=True, blank=True, upload_to="posts/")
     date = models.DateTimeField(_("Date"), auto_now=True)
 
     def __str__(self):
