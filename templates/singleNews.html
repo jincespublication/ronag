@@ -2,7 +2,9 @@
 {% load static %}
 {% block content %}
 	<!-- breadcrumb-section -->
-	<div style="background-image: url('{{ post.image1.url }}'), url('{% static 'media/posts/{{post.image1.url}}.jpg' %}');" class="breadcrumb-section breadcrumb-bg">
+	{% if post.image1 %}
+		<div style="background-image: url('{{ post.image1.url }}'), url('{% static 'media/posts/{{post.image1.url}}.jpg' %}');" class="breadcrumb-section breadcrumb-bg">
+	{% endif %}
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
@@ -24,26 +26,54 @@
 				<div class="col-lg-8">
 					<div class="single-article-section">
 						<div class="single-article-text">
-							<div class="single-artcile-bg" >
+							{% if post.image1 %}
+							<div class="single-artcile-bg">
 								<img style="height: 100%; width: 100%; object-fit: cover; object-position: center;" src="{{post.image1.url}}" alt="">
 							</div>
+							{% else %}
+							<p></p>
+							{% endif %}
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> {{user}}</span>
 								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
 							</p>
 							<h2>{{post.title}}</h2>
-							<p>{{post.paragraph1}}</p>
-							<p>{{post.paragraph2}}</p>
+							{% if post.paragraph1 %}
+								<p>{{post.paragraph1}}</p>
+							{% endif %}
+
+							{% if post.paragraph2 %}
+								<p>{{post.paragraph2}}</p>
+							{% endif %}
+							
 							{% if post.image2 %}
 							<div class="single-artcile-bg">
 								<img style="height: 100%; width: 100%; object-fit: cover; object-position: center;" src="{{post.image2.url}}" alt="">
 							</div>
-							{% else %}
-							<div>
-								sdf
+							{% endif %}
+
+							{% if post.paragraph3 %}
+								<p>{{post.paragraph3}}</p>
+							{% endif %}
+
+							{% if post.paragraph4 %}
+								<p>{{post.paragraph4}}</p>
+							{% endif %}
+							
+							{% if post.image3 %}
+							<div class="single-artcile-bg">
+								<img style="height: 100%; width: 100%; object-fit: cover; object-position: center;" src="{{post.image3.url}}" alt="">
 							</div>
 							{% endif %}
-							<p>{{post.paragraph3}}</p>
+
+							{% if post.paragraph5 %}
+								<p>{{post.paragraph5}}</p>
+							{% endif %}
+
+							{% if post.paragraph6 %}
+								<p>{{post.paragraph6}}</p>
+							{% endif %}
+
 						</div>
 
 						<div class="comments-list-wrap">
@@ -100,7 +130,7 @@
 							<h4>Recent Posts</h4>
 							<ul>
 								{% for post in posts %}
-								<li><a href="singleNews.html">{{post.title}}</a></li>
+								<li><a href="{% url 'singleNews' post.id %}">{{post.title}}</a></li>
 								{% endfor %}
 							</ul>
 						</div>
@@ -108,12 +138,12 @@
 						<div class="tag-section">
 							<h4>Tags</h4>
 							<ul>
-								<li><a href="singleNews.html">Nature</a></li>
-								<li><a href="singleNews.html">Environment</a></li>
-								<li><a href="singleNews.html">Pollution</a></li>
-								<li><a href="singleNews.html">Government</a></li>
-								<li><a href="singleNews.html">Society</a></li>
-								<li><a href="singleNews.html">Forests</a></li>
+								<li><a href="{% url 'news' %}">Nature</a></li>
+								<li><a href="{% url 'news' %}">Environment</a></li>
+								<li><a href="{% url 'news' %}">Pollution</a></li>
+								<li><a href="{% url 'news' %}">Government</a></li>
+								<li><a href="{% url 'news' %}">Society</a></li>
+								<li><a href="{% url 'news' %}">Forests</a></li>
 							</ul>
 						</div>
 

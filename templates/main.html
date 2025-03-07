@@ -67,11 +67,11 @@
 							<ul>
 								<li class="current-list-item"><a href="/">Home</a>
 								</li>
-								<li><a href="about.html">About</a></li>
+								<li><a href="{% url 'about' %}">About</a></li>
 								<li>
-									<a href="news.html">News</a>
+									<a href="{% url 'news' %}">News</a>
 								</li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="{% url 'contact' %}">Contact</a></li>
 								<li>
 									<div class="header-icons">
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -165,10 +165,10 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href={% url 'index' %}>Home</a></li>
-							<li><a href={% url 'about' %}>About</a></li>
-							<li><a href={% url 'news' %}>News</a></li>
-							<li><a href={% url 'contact' %}>Contact</a></li>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'about' %}">About</a></li>
+							<li><a href="{% url 'news' %}">News</a></li>
+							<li><a href="{% url 'contact' %}">Contact</a></li>
 						</ul>
 					</div>
 				</div>

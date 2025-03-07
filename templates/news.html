@@ -3,7 +3,7 @@
 {% block content %}
 
 	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section breadcrumb-bg">
+	<div class="breadcrumb-section breadcrumb-bg-news">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
@@ -28,13 +28,13 @@
 							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src={{post.image1}} alt="">
 						</div></a>
 						<div class="news-text-box">
-							<h3><a href="singleNews.html">{{post.title}}</a></h3>
+							<h3><a href="{% url 'singleNews' post.id %}">{{post.title}}</a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
 							</p>
 							<p class="excerpt">{{post.paragraph1}}</p>
-							<a href="singleNews.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<a href="{% url 'singleNews' post.id %}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 					
