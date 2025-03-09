@@ -34,7 +34,8 @@
 							<p></p>
 							{% endif %}
 							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> {{user}}</span>
+								{% comment %} <span class="author"><i class="fas fa-user"></i> {{user}}</span> {% endcomment %}
+								<span class="author"><i class="fas fa-user"></i>Dickson Adom</span>
 								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
 							</p>
 							<h2>{{post.title}}</h2>
@@ -46,14 +47,16 @@
 								<p>{{post.paragraph2}}</p>
 							{% endif %}
 							
+							
+
+							{% if post.paragraph3 %}
+								<p>{{post.paragraph3}}</p>
+							{% endif %}
+
 							{% if post.image2 %}
 							<div class="single-artcile-bg">
 								<img style="height: 100%; width: 100%; object-fit: cover; object-position: center;" src="{{post.image2.url}}" alt="">
 							</div>
-							{% endif %}
-
-							{% if post.paragraph3 %}
-								<p>{{post.paragraph3}}</p>
 							{% endif %}
 
 							{% if post.paragraph4 %}
