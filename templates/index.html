@@ -242,6 +242,24 @@
 			</div>
 
 			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="single-latest-news">
+						<a href="{% url 'article' %}"><div class="latest-news-bg news-bg-1">
+							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src="{% static 'assets/img/news/dozers.jpg' %}" alt="">
+						</div></a>
+						<div class="news-text-box">
+							<h3><a href="{% url 'article' %}">Stop the Impending Ecocide against Nature</a></h3>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Dickson Adom</span>
+								<span class="date"><i class="fas fa-calendar"></i>March 9, 2025, 3 p.m</span>
+							</p>
+							<p class="excerpt">Revisiting Ghanaian Indigenous Sensibilities and Setting the Tone for a Rights of Nature Ghana (RoNAG) Movement</p>
+							<a href="{% url 'article' %}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+					
+				</div>
+				
 				{% for post in posts %}
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
