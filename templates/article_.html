@@ -1,0 +1,94 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+
+</head>
+<body style="margin: 0px; padding: 0px; height: 100vh; display:flex; align-items:center; justify-content:center;">
+	<iframe style="width: 80vw; height: 100%; padding: 0px 0vw" src="https://drive.google.com/file/d/1BEMoX4s_xYlMNvuxLR11rKGcat9S6AF0/preview" frameborder="0" type="application/pdf"></iframe>
+	<div class="read">
+		<a href="{% url 'news' %}">Go back</a>
+	</div>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDF Viewer</title>
+    <style>
+        /* Loading spinner styles */
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide the iframe initially */
+        iframe {
+            display: none;
+        }
+
+        /* Center the "Go back" link */
+        .read {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body style="margin: 0px; padding: 0px; height: 100vh; display:flex; align-items:center; justify-content:center;">
+    <!-- Loading spinner -->
+    <div class="loader" id="loader"></div>
+
+    <!-- PDF iframe -->
+    <iframe id="pdf-iframe" style="width: 80vw; height: 100%; padding: 0px 0vw" src="https://drive.google.com/file/d/1BEMoX4s_xYlMNvuxLR11rKGcat9S6AF0/preview" frameborder="0" type="application/pdf"></iframe>
+
+    <!-- Go back link -->
+    <div class="read">
+        <a href="{% url 'news' %}">Go back</a>
+    </div>
+
+    <script>
+        // Show the loader while the iframe is loading
+        const iframe = document.getElementById('pdf-iframe');
+        const loader = document.getElementById('loader');
+
+        iframe.onload = function() {
+            // Hide the loader and show the iframe once the content is loaded
+            loader.style.display = 'none';
+            iframe.style.display = 'block';
+        };
+    </script>
+</body>
+</html>

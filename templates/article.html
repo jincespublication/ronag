@@ -1,94 +1,355 @@
-{% comment %} {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-
-
-</head>
-<body style="margin: 0px; padding: 0px; height: 100vh; display:flex; align-items:center; justify-content:center;">
-	<iframe style="width: 80vw; height: 100%; padding: 0px 0vw" src="https://drive.google.com/file/d/1BEMoX4s_xYlMNvuxLR11rKGcat9S6AF0/preview" frameborder="0" type="application/pdf"></iframe>
-	<div class="read">
-		<a href="{% url 'news' %}">Go back</a>
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+	<!-- breadcrumb-section -->
+		<div style="background-image: url('{{ post.image1.url }}'), url('{% static 'media/posts/{{post.image1.url}}.jpg' %}');" class="breadcrumb-section breadcrumb-bg">
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Read the Details</p>
+						{% comment %} <h1>Single Article</h1> {% endcomment %}
+						<h1>{{post.title}}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</body>
-</html> {% endcomment %}
+	<!-- end breadcrumb section -->
+	
+	<!-- single article section -->
+	<div class="mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="single-article-section">
+						<div class="single-article-text">
+							<div class="single-artcile-bg">
+								<img style="height: 100%; width: 100%; object-fit: cover; object-position: center;" src="{% static 'assets/img/news/dozers.jpg' %}" alt="">
+							</div>
+							<p></p>
+							<p class="blog-meta">
+								{% comment %} <span class="author"><i class="fas fa-user"></i> {{user}}</span> {% endcomment %}
+								<span class="author"><i class="fas fa-user"></i>Dickson Adom</span>
+								<span class="date"><i class="fas fa-calendar"></i>March 9, 2025, 3 p.m</span>
+							</p>
+							<h2>Stop the Impending Ecocide Against Nature: Revisiting Ghanaian Indigenous Sensibilities and Setting the Tone for a Rights of Nature Ghana (RoNAG) Movement</h2>
 
+							<div style="text-align:center;">
+								Dickson Adom, PhD <br><br>
 
+								Department of Educational Innovations in Science & Technology, Kwame Nkrumah University of Science and Technology, Ghana, & Convenor, Rights of Nature Ghana Movement
+								<br>
+								E-mail: dickson.adom@knust.edu.gh
+								<br>
+								Orcid: <a href="https://orcid.org/0000-0002-0559-4173">https://orcid.org/0000-0002-0559-4173</a> <br>
+								<br><br>
+							</div>
+								<p>
+									Ghana is now the largest producer of gold in Africa. However, the country is plagued by an illegal mining operation known as Galamsey which could potentially lead to an ecocide as intimated by WaterAid Ghana (WaterAid Ghana, 2024). This is due to its fast-paced destruction of water and soil in search of gold (Kaledzi, 2024). The extraction process followed by the Galamseyers is deadly and fails to respect the rights of nature. The use of heavy equipment such as bulldozers, excavators, and Chinese-made pumping machines for the gold extraction process (Essaumah & Aguasvivas, 2024) cruelly strips off forest vegetation covers and destroys rainforests which are best defenses against climate change, creating dangerous pits on land without refilling them. 
+								</p>
 
+								<p>
+									Ghana is now the largest producer of gold in Africa. However, the country is plagued by an illegal mining operation known as Galamsey which could potentially lead to an ecocide as intimated by WaterAid Ghana (WaterAid Ghana, 2024). This is due to its fast-paced destruction of water and soil in search of gold (Kaledzi, 2024). The extraction process followed by the Galamseyers is deadly and fails to respect the rights of nature. The use of heavy equipment such as bulldozers, excavators, and Chinese-made pumping machines for the gold extraction process (Essaumah & Aguasvivas, 2024) cruelly strips off forest vegetation covers and destroys rainforests which are best defenses against climate change, creating dangerous pits on land without refilling them. 
+								</p>
 
+								<p>
+									Galamsey operations inhumanely disrupt the purity, serenity, and peace of river bodies to draw up soil they suspect could potentially carry the precious mineral. As if these havoc destructions to rivers in Ghana were not enough, life-threatening and poisonous heavy metals are used in Galamsey operations.
+								</p>
+							
+								<p>
+									For instance, there are undeniable reports of using mercury, cyanide, lead, and other destructive heavy metals in Galamsey activities (Wilberforce & Nunoo, 2024). These heavy metals or chemicals are highly toxic to human health and the health of ecosystems and their impacts are uncompromisably cruel.
+								</p>
+							
+								<p>
+									Scientists from the Water Research Institute as well as Departments for Environmental Science studies in recognised Higher Education Institutions such as the Kwame Nkrumah University of Science and Technology and the University of Cape Coast have pointed out that water samples collected from rivers near Galamsey mineral extraction sites have gravely exceeded the allowable guideline value of 0.001 milligrams per litre mercury level to 0.513 milligrams per litre resulting in very dire consequences (Darko et al., 2021). For instance, the pollution of rivers due to Galamsey activities could potentially lead to the misfunctioning of the human lungs and kidneys, as well as high recorded incidence of water-borne diseases such as diarrhea, and cancers, disruption in the developmental processes of newborn babies.
+								</p>
+							
+								<p>More so, it could unjustly take away the lives of numerous aquatic species. Rivers, the lifeblood of Ghanaians today, have been poisoned, and their freedom to offer helpful ecological services to humans, plants, and animals has been cruelly incarcerated. The quest to provide quality water for Ghanaian communities is now in limbo as majority of the river bodies in Ghana are murky, dirty, contaminated and poisonousI The rippling effects are very dire.</p>
 
+								<p>
+									Since 2022, the Ghana Water Company Agency (GWCA) has bemoaned the high costs of water treatment citing the use of high quantities of treatment chemicals such as Chloride, Alum (Aluminum Sulfate), and Lime (Calcium Oxide) as a result of the high turbidity levels of the river bodies. In an interview with Joy News, a local media agency, the CEO of GWCA in the Central Region of Ghana indicated that due to the high siltation of intake sumps, they now purchase costlier water treatment chemicals such as Polyphosphates because it is very difficult to remove the heavy metals and high forms of silt using conventional coagulants (Nyarko, 2024).
+								</p>
 
+								<p>
+									Aside from this, they frequently wear and replace electromechanical equipment such as water pumps. The water pumps designed to process water with turbidity levels ranging from 800-1000 have been forced to exceed their limits to 11, 000! It is not surprising that water pumps with a life expectancy rate of a minimum of 40 years have been forced to halt work after 10 years amidst the high volumes of sludge generation and downtimes. Ghana Water Limited (GWL) on January 3, 2025, announced the shutting down of the Bonsa Headworks that supplies over 75% potable water to the Tarkwa Nsueam Municipality in the Western Region of Ghana due to the negative impacts of galamsey activities making it practically impossible to extract and treat water for distribution (Annim, 2025). The high cost of Galamsey activities to human life and the lives of nature far exceeds the revenue generated from the gold extracted.
+								</p>
 
+								<p>
+									Is the Ghana government generally oblivious to the disturbing state of nature due to Galamsey operations?
+								</p>
 
+								<p>
+									The Ghana government has rolled out some strategies to curb the menace. The Institute for Security Studies in their article dated 24th September 2024 titled 'Ghana must stop galamsey before it sinks the country' outlined some of the positive measures taken by the Ghana government to clump down on Galamsey operations in the country (Institute for Security Studies, 2024). These include the promulgation of the Small-scale Gold Mining Act, 1989 and the 2006 Minerals and Mining Act aimed at legalising artisanal mining, preventing all forms of illegal mining activities while reserving small-scale mining for Ghanaian citizens and ensuring the provision of alternative sources of livelihood and community programmes to those dependent on Galamsey.
+								</p>
 
+								<p>
+									There has also been the formation of inter-ministerial committees on illegal mining and the introduction of community mining programmes since 2017 to regulate small-scale mining, crop out illegal mining activities, and ensure responsible mining. The Minerals Commission in Ghana recommends land reclamation and restoration programmes to restore degraded mined sites to local communities as has been done recently at the Bosomtwe Freho District in the Ashanti Region of Ghana (Ghana News Agency, 2025).
+								</p>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PDF Viewer</title>
-    <style>
-        /* Loading spinner styles */
-        .loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+								<p>
+									In an article written by Emmanuel Appiah-Kubi, a consultant in the mining industry, titled 'Letter to Mahama on New Year's Day; reclamation Bond - the game changer in the galamsey fight', he suggested the introduction of reclamation bond system for small-scale mining as a means of incentivizing miners in minimizing environmental degradation with the government forcing small-scale mining companies to pay for the restoration of mining sites should they attempt to abandon those sites (CitiNews, 2024). However, the cost for such projects is huge and the recovery period takes a great deal of time with waiting periods insensitive to local communities who bear the brunt of galamsey activities.
+								</p>
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+								<p>
+									Also, brutal strategies such as the formation of a joint task force of military and other security personnel to raid Galamseyers have been rolled out. In 2013, it led to the deportation of over 4, 500 Chinese miners, and the confiscation and burning of heavy mining equipment such as excavators and bulldozers.
+								</p>
 
-        /* Hide the iframe initially */
-        iframe {
-            display: none;
-        }
+								<p>
+									Since 2017, similar military task forces such as Operation Vanguard, Operation Halt, Operation Flush Out, Galamstop, and others have chalked some successes. However, these governmental interventions have only been a 'flash', with short-lived, erasure results because they are highly unsustainable. Why that? This is because of the weak political will to support anti-galamsey interventions, laws, and programs among some governmental authorities.
+								</p>
 
-        /* Center the "Go back" link */
-        .read {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
-</head>
-<body style="margin: 0px; padding: 0px; height: 100vh; display:flex; align-items:center; justify-content:center;">
-    <!-- Loading spinner -->
-    <div class="loader" id="loader"></div>
+								<p>
+									These politicians fear that shaming galamsey operations would jeopardise their 'electoral fortunes' among Ghanaians. Worse, some key governmental officials, politicians, and political party financiers have been fingered in reports on galamsey operations at mining spaces cited close to rivers and forest reserves (Institute for Security Studies, 2024).
+								</p>
 
-    <!-- PDF iframe -->
-    <iframe id="pdf-iframe" style="width: 80vw; height: 100%; padding: 0px 0vw" src="https://drive.google.com/file/d/1BEMoX4s_xYlMNvuxLR11rKGcat9S6AF0/preview" frameborder="0" type="application/pdf"></iframe>
+								<p>
+									It is even more distressing to know that there has been a political preference for economic gains among past and present Ghana governments over the protection of nature. The rights of nature have been unjustly traded for minerals! When this happens, the voices of the numerous local communities living around the mining sites are often silenced, their livelihoods eroded and their lives threatened by poisoned rivers and lands.
+								</p>
 
-    <!-- Go back link -->
-    <div class="read">
-        <a href="{% url 'news' %}">Go back</a>
-    </div>
+								<p>
+									This situation has angered many Ghanaians including environmental advocacy groups, media houses, churches, educational institutions, and professionals ranging from artists to musicians who have taken to the streets to campaign against the impending ecocide that is soon to befall the country if the rights of nature are not strongly defended by 2030.
+								</p>
 
-    <script>
-        // Show the loader while the iframe is loading
-        const iframe = document.getElementById('pdf-iframe');
-        const loader = document.getElementById('loader');
+								<p>
+									At this point, I am in league with the thoughts of Elizabeth Aluva Vaah, convener of the Ghana Environmental Advocacy Group who remarked 'We've gotten to a point where either we do something, and we give ultimatums…or just watch ourselves poisoned to death' (Osei, 2024).
+								</p>
 
-        iframe.onload = function() {
-            // Hide the loader and show the iframe once the content is loaded
-            loader.style.display = 'none';
-            iframe.style.display = 'block';
-        };
-    </script>
-</body>
-</html>
+								<p>
+									The ultimate solution, in my view, is to fight for and defend the rights of nature in Ghana. When this feat is achieved, we would then position ourselves better to recover the livelihoods and the very existence of indigenous communities.
+								</p>
+
+								<p>
+									The Rights of Nature (RoN) aims at recognising nature as a natural entity with inherent rights that need to be acknowledged and respected. RoN movements defend the foundational rights of nature or a natural element such as a river, mountain, or park to exist, thrive, regenerate, evolve, perform their natural functions, and be restored (Margil, 2024).
+								</p>
+
+								<p>
+									Historically, the RoN movement gained momentum after the literary work of lawyer, Christopher Stone titled 'Should Trees Have Standing' was published. He argued that elements in nature possess rights and when these rights are unjustly disrespected and exploited with negative repercussions, her case could be potentially pleaded in a court of law for redress (Stone, 1972). This is contrary or in rivalry against the Western law and legal theory (jurisprudence) that has positioned nature as a resource for the use of humans (O'Donnell et al., 2023).
+								</p>
+
+								<p>
+									RoN movements attribute the mistreatment of nature that often leads to biodiversity degradation, pollution, and climate change as a result of existing legal instruments that is human-centered, giving exclusive rights to humans to treat nature as a property, a thing, and a resource to be exploited.
+								</p>
+
+								<p>
+									Rights of Nature has its roots enshrined in the animistic practices of indigenous communities where natural elements such as rivers, trees, forests, and mountains are believed to have inherent souls and as such are treated as living beings with rights that need to be respected. This worldview is evident among indigenous communities in Africa, Asia, and South America where particular rivers and forests are viewed as sacrosanct and believed to possess souls or believed to be inhabited by powerful spirits.
+								</p>
+
+								<p>
+									As legal rightsholders to co-exist with humans, special reverence is given to these natural elements with some even deified.[i] There are countless accounts among indigenous communities around the world where natural elements such as trees, rivers, forests, and mountains have offered supernatural assistance to particular indigenous communities that ensured their survival. It is asserted in those indigenous communities that some of these natural beings transformed into helpful agents and as such are seen as kinsmen or community totemic emblems that should never be mistreated or damaged.
+								</p>
+
+								<p>
+									Indigenous communities believe that whenever a peaceful and harmonious relationship is maintained between humans and nature, there is balance within ecosystems. This is often interpreted as sustainable living with nature. When this happens, she (i.e. nature) wholeheartedly offers her services for the good of humans.
+								</p>
+
+								<p>
+									RoN is now a global environmental movement implemented in various countries aimed at resetting the human relationship with nature, such that there is obligatory respect and care for nature as a living entity (O'Donnell et al., 2023). The RoN movements have had the most success in Oceania, and South America and now gaining traction in Africa because the roots of the movement which revolves around the belief in animism[ii] reigns high among their indigenous communities.
+								</p>
+
+								<p>
+									The concept of the Rights of Nature sits well with Ghana, a country with rich indigenous knowledge that promotes the harmonious and mutually interdependent relationship between humans and nature.
+								</p>
+
+								<p>
+									Indigenous communities in Ghana have consistently respected the rights of nature, assigning her names, performing various pacification rites to restore its sanctity, and promulgating various taboos to prevent her abuse. Though the indigenous Ghanaian cosmological belief that respected nature's rights has waned due to globalization and Western cultural infiltration and adulteration, among other factors, the average Ghanaian is sensitive to the plight of nature. This is evident in the soaring numbers of protesters who are strongly fighting for, and defending the rights of nature.[iii]
+								</p>
+
+								<p>
+									It is not wrong to fetch from the past, a lesson told to us by our intelligent forebears enshrined in the design iconography of the Sankofa Adinkra symbol.
+								</p>
+
+								<p>
+									On this premise, I have assumed the role of a lead convener for the Rights of Nature Ghana Movement[iv], a group with dedicated environmental enthusiasts drawn from transdisciplinary positionality. As a researcher who has explored the field of Indigenous knowledge systems for nature conservation, I was drawn to the concept naturally as it syncs with my personal conviction that the indigenous sensibilities hold significant weight in salvaging nature, yes, restoring her lost dignity and value.
+								</p>
+
+								<p>
+									I count myself fortunate to have attended the invited webinar on the Rights of Nature organized by Gower Street in the U.K. The inspiring talks of Emma Montlake (Joint Executive Director of Environmental Law Foundation & Campaigner for Love our Ouse), Phoebe Tickell (Founder and CEO, Moral Imaginations), and Mari Margil (Executive Director, Centre for Democratic and Environmental Rights) really got me thinking why Ghana has not been searching for solutions to her impending ecocide in the Rights of Nature!
+								</p>
+
+								<p>
+									Follow-up talks with Mari Margil as well as Clara Usiskin and Sarai Chisala Tempelhoff from the Lawyers of Nature have had a lasting impact on me, nurturing me to lead this group of environmental enthusiasts who are eager to defend the rights of nature in Ghana.[v]
+								</p>
+
+								<p>
+									With the RoNAG's movement approved and registered, it is hoped that its activities[vi] will gain the impacts expected. This would help in directing Ghanaians back to the indigenous sensibilities where nature was respected and deeply cared for. Yes, an important return to the past when there existed a mutually interdependent relationship between humans and nature - a time-tested and sustainable solution to our impending ecocide!
+								</p>
+
+								<p>
+									[i] See the works of Dickson Adom from 2016-2024 for extensive research on the cosmological beliefs of indigenous communities in Ghana and how they’ve aided in biodiversity conservation. A classical example is ‘Adom, D. (2018). Traditional Cosmology and Nature Conservation at the Bomfobiri Wildlife Sanctuary of Ghana.’ Nature Conservation Research, 3(1): 35-57.
+								</p>
+
+								<p>
+									[ii] Animism is the belief that all natural things have souls or spirits inherent in them and some possess special powers granted to them by the Supreme Deity (God). See Adom, D. (2014). General Knowledge in Art, published by Adom D. Publication, Kumasi, Ghana, p. 194
+								</p>
+
+								<p>
+									[iii] For example, on October 3, 2024, several protesters flooded Accra demanding the immediate cessation of illegal mining (galamsey). Find more information on this issue published by Vanguard News in the link below: 
+									<a href="https://www.vanguardngr.com/2024/10/protesters-in-ghana-demand-end-to-illegal-mining/">https://www.vanguardngr.com/2024/10/protesters-in-ghana-demand-end-to-illegal-mining/</a>
+								</p>
+
+								<p>
+									Another example is the protesters from the Catholic Archdiocese of Accra who demonstrated on the streets of Accra on October 7 2024 against illegal mining (galamsey). Find more information in the link below: <br>
+									<a href="https://www.reuters.com/world/africa/hundreds-march-against-ghanas-damaging-informal-gold-mining-boom-2024-10-11/">https://www.reuters.com/world/africa/hundreds-march-against-ghanas-damaging-informal-gold-mining-boom-2024-10-11/</a>
+
+								</p>
+
+								<p>
+									[iv] Rights of Nature Ghana (RoNAG) Movement’s website which is still under construction: <a href="https://www.ronag.org">https://www.ronag.org</a>   
+									<br><br>
+									[v] Find the core team of the Rights of Nature Ghana (RoNAG) Movement: <a href="https://www.ronag.org/about">https://www.ronag.org/about</a> 
+								</p>
+
+								<p>
+									[vi] The four key organizational objectives of the Rights of Nature Ghana (RoNAG) Movement are: To research and understand the local context for the rights of nature in Ghana; To promote a deep understanding of the rights of nature through participatory advocacy and training workshops in Ghana especially in local communities where nature has been unjustly treated; To secure legal recognition and protection for the Rights of Nature by strengthening existing legal frameworks on environmental laws and regulatory frameworks in Ghana; Establish a strong network of strategic partnerships that promote and advocate for the legal recognition of the rights of nature in Ghana.
+								</p>
+
+								<p><br><br>
+									References
+									<br><br>
+
+									Annim, A. A. (January 3, 2025). Bonsa headworks shut down over galamsey activities.<br><a href="https://citinewsroom.com/2025/01/bonsa-headworks-shut-down-over-galamsey-activities/">https://citinewsroom.com/2025/01/bonsa-headworks-shut-down-over-galamsey-activities/</a> 
+									<br><br><br><br>
+
+									CitiNews (December 31, 2024). Letter to Mahama on New Year’s Day; reclamation bond- the game changer in galamsey fight. <br><a href="https://citinewsroom.com/2024/12/letter-to-mahama-on-new-years-day-reclamation-bond-the-game-changer-in-galamsey-fight/">https://citinewsroom.com/2024/12/letter-to-mahama-on-new-years-day-reclamation-bond-the-game-changer-in-galamsey-fight/</a> 
+									<br><br><br><br>
+
+									Darko, G., Obiri-Yeboah, S., Takyi, S. A., Amponsah, O., Borquaye, L. S., Amponsah, L. O. & Fosu-Mensah, B. Y. (2021). Urbanizing with or without nature: pollution effects on human activities on water quality of major rivers that drain the Kumasi Metropolis of Ghana. Environmental Monitoring and Assessment, 194(1): 38. <br><a href="https://doi.org/10.1007/s10661-021-09686-8">https://doi.org/10.1007/s10661-021-09686-8</a>
+									<br><br><br><br>
+									
+
+									Essamuah, Z. & Aguasvivas, A. (October 20, 2024). Illegal mines, pollution and a thirsty global market; Anger mounts over Ghana’s gold problem. <br><a href="https://www.google.com/amp/s/www.nbcnews.com/news/amp/rcna174636">https://www.google.com/amp/s/www.nbcnews.com/news/amp/rcna174636</a> 
+									<br><br><br><br>
+									
+
+									Ghana News Agency (January 2, 2025). Minerals Commission hands over 159 hectares of reclaimed mining sites to 7 communities.
+									<br><br>
+									<br><a href="https://gna.org.gh/2025/01/minerals-commission-hands-over-159-hectares-of-reclaimed-mining-sites-to-seven-communities/">https://gna.org.gh/2025/01/minerals-commission-hands-over-159-hectares-of-reclaimed-mining-sites-to-seven-communities/</a>
+									<br><br><br><br>
+									
+
+									Institute for Security Studies (September 24, 2024). Ghana must stop galamsey before it sinks the country. <br><a href=" https://issafrica.org/iss-today/ghana-must-stop-galamsey-before-it-sinks-the-country"> https://issafrica.org/iss-today/ghana-must-stop-galamsey-before-it-sinks-the-country</a>
+									<br><br><br><br>
+									
+
+									Kaledzi, I. (December 23, 2024). Illegal mining-polluting Ghana’s rivers and lands. <br><a href=" https://www.dw.com/en/illegal-mining-polluting-ghanas-rivers-and-land/video-71078606"> https://www.dw.com/en/illegal-mining-polluting-ghanas-rivers-and-land/video-71078606</a>
+									<br><br><br><br>
+									
+
+									Kankam, S. (2023). Greater Amanzule wetlands conservation project. <br><a href="https://henmpoano.org/ova_por/greater-amanzule-wetlands-conservation-gaw-project/">https://henmpoano.org/ova_por/greater-amanzule-wetlands-conservation-gaw-project/</a> 
+									<br><br><br><br>
+									Mensah, K. (September 17, 2024). Poisoned Waters. Dying rivers, dying hopes: Human cost of illegal mining devastating Ghana’s future. <br><a href="https://www.dw.com/en/illegal-mining-polluting-ghanas-rivers-and-land/video-71078606">https://www.dw.com/en/illegal-mining-polluting-ghanas-rivers-and-land/video-71078606</a> 
+									<br><br><br><br>
+									
+
+									Nyarko, R. K. (September 2, 2024). Hotline documentary-Joy News on poisoned waters.<br><a href="https://x.com/JoyNewsOnTV/status/1830755228683035069">https://x.com/JoyNewsOnTV/status/1830755228683035069</a> 
+									<br><br><br><br>
+									
+
+									O’Donnell, E., Pelizzon, A. & Hooker, R. (2023). Time is now for the next rights of nature phase.<br><a href="https://360info.org/time-is-now-for-the-next-rights-of-nature-phase/">https://360info.org/time-is-now-for-the-next-rights-of-nature-phase/</a> 
+									<br><br><br><br>
+									
+
+									Osei, L. (April 16, 2024). Galamsey polluting Ankobra river, poisoning locals-environmentalist warns.<br><a href="https://citinewsroom.com/2024/04/galamsey-polluting-ankobra-river-poisoning-locals-environmentalist-warns/">https://citinewsroom.com/2024/04/galamsey-polluting-ankobra-river-poisoning-locals-environmentalist-warns/</a> 
+									<br><br><br><br>
+									
+
+									WaterAid Ghana (September 13, 2024). WaterAid demands immediate halt to illegal mining as water supply drops 75% due to pollution. <br><a href="https://www.wateraid.org/gh/blog/wateraid-demands-immediate-halt-to-illegal-mining-as-water-supply-drops-75-due-to-pollution">https://www.wateraid.org/gh/blog/wateraid-demands-immediate-halt-to-illegal-mining-as-water-supply-drops-75-due-to-pollution</a>
+									<br><br><br><br>
+									
+
+									Wilberforce, M. & Nunoo, F. (October 20, 2024). ‘We are poisoning ourselves’: Ghana’s gold rush sparks environmental disaster. <br><a href="https://x.com/BBCWorld/status/1847938374063084002?lang=en">https://x.com/BBCWorld/status/1847938374063084002?lang=en</a>
+									<br><br><br><br>
+									
+
+									Yankey, P. K. (November 28, 2023). Traditional council tasks committee to halt galamsey activities in river Amazule. <br><a href="https://mobile.ghanaweb.com/GhanaHomePage/NewsArchive/Traditional-Council-tasks-committee-to-halt-galamsey-activities-in-river-Amanzule-1890041">https://mobile.ghanaweb.com/GhanaHomePage/NewsArchive/Traditional-Council-tasks-committee-to-halt-galamsey-activities-in-river-Amanzule-1890041</a> 
+									<br><br><br><br>
+									
+
+									About the Author
+									<br><br>
+									<strong>Dr. Dickson Adom</strong> is a pluridisciplinary researcher whose work focuses on using indigenous knowledge systems for developing innovative strategies, pedagogies and community-led projects aimed at conserving nature, preserving cultural heritage and building resilient local communities. He is a Senior Member in the Department of Educational Innovations in Science and Technology, Kwame Nkrumah University of Science and Technology, Ghana. He is the lead campaigner for the Rights of Nature Ghana (RoNAG) Movement, a team of dedicated environmental enthusiasts who are passionate and poised to assume the role of spokespersons in defending the rights of nature in Ghana.
+								</p>
+
+							
+
+						</div>
+
+						{% comment %} <div class="comments-list-wrap">
+							<h3 class="comment-count-title">3 Comments</h3>
+							<div class="comment-list">
+								<div class="single-comment-body">
+									<div class="comment-user-avater">
+										<img src="{% static 'assets/img/avaters/avatar1.png'%}" alt="">
+									</div>
+									<div class="comment-text-body">
+										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
+										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+									</div>
+									<div class="single-comment-body child">
+										<div class="comment-user-avater">
+											<img src="{% static 'assets/img/avaters/avatar3.png'%}" alt="">
+										</div>
+										<div class="comment-text-body">
+											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
+											<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+										</div>
+									</div>
+								</div>
+								<div class="single-comment-body">
+									<div class="comment-user-avater">
+										<img src="{% static 'assets/img/avaters/avatar2.png'%}" alt="">
+									</div>
+									<div class="comment-text-body">
+										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
+										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+									</div>
+								</div>
+							</div>
+						</div> {% endcomment %}
+
+						{% comment %} <div class="comment-template">
+							<h4>Leave a comment</h4>
+							<p>If you have a comment dont feel hesitate to send us your opinion.</p>
+							<form action="{% url 'index' %}">
+								<p>
+									<input type="text" placeholder="Your Name">
+									<input type="email" placeholder="Your Email">
+								</p>
+								<p><textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your Message"></textarea></p>
+								<p><input type="submit" value="Submit"></p>
+							</form>
+						</div> {% endcomment %}
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<div class="sidebar-section">
+						<div class="recent-posts">
+							<h4>Recent Posts</h4>
+							<ul>
+								{% for post in posts %}
+								<li><a href="{% url 'singleNews' post.id %}">Stop the Impending Ecocide Against Nature: Revisiting Ghanaian Indigenous Sensibilities and Setting the Tone for a Rights of Nature Ghana (RoNAG) Movement</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+						
+						<div class="tag-section">
+							<h4>Tags</h4>
+							<ul>
+								<li><a href="{% url 'news' %}">Nature</a></li>
+								<li><a href="{% url 'news' %}">Environment</a></li>
+								<li><a href="{% url 'news' %}">Pollution</a></li>
+								<li><a href="{% url 'news' %}">Government</a></li>
+								<li><a href="{% url 'news' %}">Society</a></li>
+								<li><a href="{% url 'news' %}">Forests</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

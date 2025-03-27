@@ -17,7 +17,8 @@ def contact(request):
     return render(request, 'contact.html')
 
 def article(request):
-    return render(request, 'article.html')
+    context = {"posts": posts}
+    return render(request, 'article.html', context)
 
 
 def news(request):
