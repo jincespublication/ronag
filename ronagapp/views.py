@@ -20,6 +20,10 @@ def article(request):
     context = {"posts": posts}
     return render(request, 'article.html', context)
 
+def article2(request):
+    context = {"posts": posts}
+    return render(request, 'article2.html', context)
+
 
 def news(request):
     return render(request, 'news.html', post)

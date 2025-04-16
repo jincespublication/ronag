@@ -329,8 +329,10 @@
 						<div class="recent-posts">
 							<h4>Recent Posts</h4>
 							<ul>
-								{% for post in posts %}
-								<li><a href="{% url 'singleNews' post.id %}">Stop the Impending Ecocide Against Nature: Revisiting Ghanaian Indigenous Sensibilities and Setting the Tone for a Rights of Nature Ghana (RoNAG) Movement</a></li>
+								<li><a href="{% url 'article2' %}">The Unwilling Ghana</a></li>
+								<li><a href="{% url 'article' %}">Stop the impending Ecocide against nature</a></li>
+								{% for poster in posts %}
+								<li><a href="{% url 'singleNews' poster.id %}">{{poster.title}}</a></li>
 								{% endfor %}
 							</ul>
 						</div>
