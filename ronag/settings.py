@@ -48,12 +48,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ronagapp',
     'cloudinary',
+    'livereload'
     # 'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'livereload.middleware.LiveReloadScript',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
