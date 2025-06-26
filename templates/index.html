@@ -15,7 +15,7 @@
 									<p class="subtitle">Rights of Nature Ghana Movement</p>
 									<h1>Defending Ghana’s rivers, forests, and wildlife</h1>
 									<div class="hero-btns">
-										<a href="{% url 'contact' %}" class="boxed-btn">Join Us</a>
+										<a href="{% url 'membership' %}" class="boxed-btn">Join Us</a>
 										<a href="{% url 'contact' %}" class="bordered-btn">Contact Us</a>
 									</div>
 								</div>
@@ -74,7 +74,7 @@
 				Welcome to the Rights of Nature-Ghana Movement (RoNAG)
 			</div>
 			<div class="welc-img">
-				<img src="{% static 'assets/img/im7.png' %}" alt="">
+				<img loading='lazy' src="{% static 'assets/img/im7.png' %}" alt="">
 				<div>
 					<em>A</em>t RoNAG, we are dedicated to defending the rights of nature in Ghana. Our mission is to advocate for the recognition of natural entities—such as rivers, mountains, parks, and wildlife—as living beings with inherent rights to exist, thrive, and regenerate. Through advocacy, research, and legal action, we strive to protect Ghana’s natural heritage from exploitation and injustice.
 				</div>
@@ -94,7 +94,7 @@
 		<div>
 			<em>N</em>ature is not just a resource; it is a living entity that sustains us all. By recognizing the rights of nature, we can ensure a healthier, more sustainable future for both people and the planet. Our work is rooted in indigenous knowledge, cultural values, and local communities, ensuring that our efforts are both impactful and inclusive.
 		</div>
-		<img src="{% static 'assets/img/im4.jpg' %}" alt="">
+		<img loading='lazy' src="{% static 'assets/img/im4.jpg' %}" alt="">
 
 	</div>
 
@@ -143,7 +143,7 @@
 					<div class="testimonial-sliders">
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="{% static 'assets/img/avaters/gary.png' %}" alt="">
+								<img loading='lazy' src="{% static 'assets/img/avaters/gary.png' %}" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Gary Snyder <span>American poet and essayist</span></h3>
@@ -157,7 +157,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="{% static 'assets/img/avaters/margaret.jpeg' %}" alt="">
+								<img loading='lazy' src="{% static 'assets/img/avaters/margaret.jpeg' %}" alt="">
 							</div>
 							<div class="client-meta">
 								<h3> Margaret Mead <span>American cultural anthropologist and author</span></h3>
@@ -171,7 +171,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="{% static 'assets/img/avaters/swan.jpeg' %}" alt="">
+								<img loading='lazy' src="{% static 'assets/img/avaters/swan.jpeg' %}" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Robert Swan <span>Explorer</span></h3>
@@ -185,7 +185,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="{% static 'assets/img/avaters/lady.jpeg' %}" alt="">
+								<img loading='lazy' src="{% static 'assets/img/avaters/lady.jpeg' %}" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Lady Bird Johnson<span>Environmentalist, businesswoman, political activist</span></h3>
@@ -241,7 +241,72 @@
 				</div>
 			</div>
 
+			<div style="display:flex; margin: -3vh 0  8vh 0; text-align:center; justify-content:center; gap: 3em;">
+				<p >
+					<a style="padding:20px 20px; background-color:orange; border-radius: 20px; color:black;" href="{% url 'online' %}">Online Posts</a>
+				</p>
+			</div>
+
+
 			<div class="row">
+				
+				
+				{% for online in onlinePosts|slice:":3" %}
+				<div class="col-lg-4 col-md-6">
+					<div class="single-latest-news">
+						<a target="_blank" href="{{online.url}}"><div class="latest-news-bg news-bg-1">
+							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src={{online.image}} alt="">
+						</div></a>
+						<div class="news-text-box">
+							<h3><a target="_blank" href="{{online.url}}">{{online.title}}</a></h3>
+							<p class="blog-meta">
+								{% if online.author %}
+								<span class="author"><i class="fas fa-user"></i> {{online.author}}</span>
+								{% else %}
+								<span class="author"><i class="fas fa-user"></i> Admin</span>
+								{% endif %}
+								<span class="date"><i class="fas fa-calendar"></i>{{online.date}}</span>
+							</p>
+							<p class="excerpt">{{online.paragraph}}</p>
+							<a target="_blank" href="{{online.url}}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			<div style="display:flex; margin: 4vh 0  7vh 0; text-align:center; justify-content:center; gap: 3em;">
+				<p >
+					<a style="padding:20px 20px; background-color:orange; border-radius: 20px; color:black;" href="{% url 'news' %}">Ronag News</a>
+				</p>
+			</div>
+
+			<div class="row">
+				
+				
+				{% for post in posts|slice:":3" %}
+				<div class="col-lg-4 col-md-6">
+					<div class="single-latest-news">
+						<a href="{% url 'singleNews' post.id %}"><div class="latest-news-bg news-bg-1">
+							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src={{post.image1}} alt="">
+						</div></a>
+						<div class="news-text-box">
+							<h3><a href="{% url 'singleNews' post.id %}">{{post.title}}</a></h3>
+							<p class="blog-meta">
+								{% if post.author %}
+								<span class="author"><i class="fas fa-user"></i> {{post.author}}</span>
+								{% else %}
+								<span class="author"><i class="fas fa-user"></i> Admin</span>
+								{% endif %}
+								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
+							</p>
+							<p class="excerpt">{{post.paragraph1}}</p>
+							<a href="{% url 'singleNews' post.id %}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
 						<a href="{% url 'article2' %}"><div class="latest-news-bg news-bg-1">
@@ -281,25 +346,6 @@
 					</div>
 					
 				</div>
-				
-				{% for post in posts %}
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="{% url 'singleNews' post.id %}"><div class="latest-news-bg news-bg-1">
-							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src={{post.image1}} alt="">
-						</div></a>
-						<div class="news-text-box">
-							<h3><a href="{% url 'singleNews' post.id %}">{{post.title}}</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
-							</p>
-							<p class="excerpt">{{post.paragraph1}}</p>
-							<a href="{% url 'singleNews' post.id %}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
 				
 			</div>
 			<div class="row">

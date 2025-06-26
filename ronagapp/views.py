@@ -4,8 +4,13 @@ from .models import *
 
 # Create your views here.
 posts = Post.objects.all()
-post = {"posts": posts}
+online_posts = OnlinePost.objects.all()
+post = {"posts": list(reversed(posts)), "onlinePosts": list(reversed(online_posts))}
+
+
+
 def index(request):
+
     return render(request, 'index.html', post)
 
 def about(request):
@@ -15,6 +20,18 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+def gallery(request):
+    image = Gallery.objects.all()
+    image_group = ImageGroup.objects.all()
+    context = {"images":image, "image_groups":image_group}
+    return render(request, "gallery.html", context)
+
+def membership(request):
+    return render(request, 'membership.html')
+
+
 
 def article(request):
     context = {"posts": posts}
@@ -27,6 +44,10 @@ def article2(request):
 
 def news(request):
     return render(request, 'news.html', post)
+
+def online(request):
+    
+    return render(request, 'online.html', post)
 
 def singleNews(request, post_id):
     post = get_object_or_404(Post, pk=post_id)

@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'assets/css/gallery.css' %}" rel="stylesheet">
+{% comment %} <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet"> {% endcomment %}
+{% comment %} <link href="{% static 'assets/css/glightbox.css' %}" rel="stylesheet"> {% endcomment %}
+{% comment %} <link href="{% static 'assets/css/glightbox.min.css' %}" rel="stylesheet"> {% endcomment %}
+
+{% comment %} <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet"> {% endcomment %}
+
+{% comment %} <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet"> {% endcomment %}
+
+
+	<div class="breadcrumb-section breadcrumb-bg-gallery">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>RoNAG</p>
+						<h1>Gallery</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <!-- Template Main CSS File -->
+  <link href="{% static 'gallery.css' %}" rel="stylesheet">
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center fas">
+          <li data-filter="*" class="filter-active">All</li>
+        </ul>
+
+        <div class="row portfolio-container">
+          {% for image in images %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{image.name}}">
+              <div class="portfolio-img"><img src={{image.imageURL}} id="image" class="img-fluid" alt=""></div>
+              <div class="portfolio-info">
+                {% comment %} <h4>{{image.name}}</h4> {% endcomment %}
+                <p>Description</p>
+                <a href={{image.imageURL}} data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Description"><i class="fas fa-eye"></i></a>
+                <a href={{image.imageURL}} download={{image.imageURL}} class="details-link " title="More Details"><i class="fas fa-download"></i></a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section>
+
+
+{% endblock content %}

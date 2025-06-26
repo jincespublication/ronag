@@ -34,8 +34,11 @@
 							<p></p>
 							{% endif %}
 							<p class="blog-meta">
-								{% comment %} <span class="author"><i class="fas fa-user"></i> {{user}}</span> {% endcomment %}
-								<span class="author"><i class="fas fa-user"></i>Dickson Adom</span>
+								{% if post.author %}
+								<span class="author"><i class="fas fa-user"></i> {{post.author}}</span>
+								{% else %}
+								<span class="author"><i class="fas fa-user"></i> Admin</span>
+								{% endif %}
 								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
 							</p>
 							<h2>{{post.title}}</h2>
@@ -84,7 +87,7 @@
 							<div class="comment-list">
 								<div class="single-comment-body">
 									<div class="comment-user-avater">
-										<img src="{% static 'assets/img/avaters/avatar1.png'%}" alt="">
+										<img loading='lazy' src="{% static 'assets/img/avaters/avatar1.png'%}" alt="">
 									</div>
 									<div class="comment-text-body">
 										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
@@ -92,7 +95,7 @@
 									</div>
 									<div class="single-comment-body child">
 										<div class="comment-user-avater">
-											<img src="{% static 'assets/img/avaters/avatar3.png'%}" alt="">
+											<img loading='lazy' src="{% static 'assets/img/avaters/avatar3.png'%}" alt="">
 										</div>
 										<div class="comment-text-body">
 											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
@@ -102,7 +105,7 @@
 								</div>
 								<div class="single-comment-body">
 									<div class="comment-user-avater">
-										<img src="{% static 'assets/img/avaters/avatar2.png'%}" alt="">
+										<img loading='lazy' src="{% static 'assets/img/avaters/avatar2.png'%}" alt="">
 									</div>
 									<div class="comment-text-body">
 										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>

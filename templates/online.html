@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg-news">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>RoNAG news</p>
+						<h1>Online Posts</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<div style="display:flex; margin: 8vh 0  -8vh 0; text-align:center; justify-content:center; gap: 3em;">
+		<p >
+			<a  href="{% url 'news' %}">Ronag News</a>
+		</p>
+		<p>
+			<a style="padding:20px 20px; background-color:orange; border-radius: 20px; color:black;" href="{% url 'online' %}">Online Posts</a>
+		</p>
+	</div>
+
+	<!-- latest news -->
+	<div class="latest-news mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+
+				{% for onlinePost in onlinePosts %}
+				<div class="col-lg-4 col-md-6">
+					<div class="single-latest-news">
+						<a target="_blank" href="{{onlinePost.url}}"><div class="latest-news-bg news-bg-1">
+							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src={{onlinePost.image}} alt="">
+						</div></a>
+						<div class="news-text-box">
+							<h3><a target="_blank" href="{{onlinePost.url}}">{{onlinePost.title}}</a></h3>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> {{onlinePost.author}}</span>
+								<span class="date"><i class="fas fa-calendar"></i>{{onlinePost.date}}</span>
+							</p>
+							<p class="excerpt">{{onlinePost.paragraph}}</p>
+							<a target="_blank" href='{{onlinePost.url}}' class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+					
+				</div>
+				{% endfor %}
+			</div>
+
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<div class="pagination-wrap">
+								<ul>
+									<li><a href="#">Prev</a></li>
+									<li><a href="#">1</a></li>
+									<li><a class="active" href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">Next</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end latest news -->
+{% endblock content %}

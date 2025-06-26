@@ -17,10 +17,47 @@
 	</div>
 	<!-- end breadcrumb section -->
 
+	<div style="display:flex; margin: 8vh 0  -8vh 0; text-align:center; justify-content:center; gap: 3em;">
+		<p >
+			<a style="padding:20px 20px; background-color:orange; border-radius: 20px; color:black;" href="{% url 'news' %}">Ronag News</a>
+		</p>
+		<p>
+			<a href="{% url 'online' %}">Online Posts</a>
+		</p>
+	</div>
+
 	<!-- latest news -->
 	<div class="latest-news mt-150 mb-150">
 		<div class="container">
 			<div class="row">
+				
+
+				{% for post in posts %}
+				<div class="col-lg-4 col-md-6">
+					<div class="single-latest-news">
+						<a href="{% url 'singleNews' post.id %}"><div class="latest-news-bg news-bg-1">
+							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src={{post.image1}} alt="">
+						</div></a>
+						<div class="news-text-box">
+							<h3><a href="{% url 'singleNews' post.id %}">{{post.title}}</a></h3>
+							<p class="blog-meta">
+								{% if post.author %}
+								<span class="author"><i class="fas fa-user"></i> {{post.author}}</span>
+								{% else %}
+								<span class="author"><i class="fas fa-user"></i> Admin</span>
+								{% endif %}
+								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
+							</p>
+							<p class="excerpt">{{post.paragraph1}}</p>
+							<a href="{% url 'singleNews' post.id %}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+					
+				</div>
+				{% endfor %}
+
+
+
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
 						<a href="{% url 'article2' %}"><div class="latest-news-bg news-bg-1">
@@ -61,26 +98,6 @@
 					</div>
 					
 				</div>
-
-				{% for post in posts %}
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="{% url 'singleNews' post.id %}"><div class="latest-news-bg news-bg-1">
-							<img style="height: 100%; width: 100%; object-position: center; object-fit: cover;" src={{post.image1}} alt="">
-						</div></a>
-						<div class="news-text-box">
-							<h3><a href="{% url 'singleNews' post.id %}">{{post.title}}</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Dickson Adom</span>
-								<span class="date"><i class="fas fa-calendar"></i>{{post.date}}</span>
-							</p>
-							<p class="excerpt">{{post.paragraph1}}</p>
-							<a href="{% url 'singleNews' post.id %}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-					
-				</div>
-				{% endfor %}
 			</div>
 
 			<div class="row">

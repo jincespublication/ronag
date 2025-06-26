@@ -312,6 +312,11 @@
 	.contact-form form p input[type=email] {
 	    width: 100%;
 	}
+	.membership-form form p input[type=text], 
+	.membership-form form p input[type=tel], 
+	.membership-form form p input[type=email] {
+	    width: 100%;
+	}
 	.contact-form form p input[type=tel] {
 		margin-bottom: 15px;
 	}

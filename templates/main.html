@@ -40,11 +40,11 @@
 <body>
 	
 	<!--PreLoader-->
-    <div class="loader">
+    {% comment %} <div class="loader">
         <div class="loader-inner">
             <div class="circle"></div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!--PreLoader Ends-->
 	
 	<!-- header -->
@@ -55,7 +55,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div style=" margin-top: -25px; z-index: -1;" class="site-logo">
-							<a href="index.html">
+							<a href="{% url 'index' %}">
 								<img style="height: 90px; width: 90px; object-fit: contain; object-position: center;"  src="{% static 'assets/img/logo.png' %}" alt="">
 							</a>
 							<a>Rights of Nature Ghana Movement</a>
@@ -72,6 +72,8 @@
 									<a href="{% url 'news' %}">News</a>
 								</li>
 								<li><a href="{% url 'contact' %}">Contact</a></li>
+								<li><a href="{% url 'membership' %}">Join us</a></li>
+								<li><a href="{% url 'gallery' %}">gallery</a></li>
 								<li>
 									<div class="header-icons">
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -175,6 +177,8 @@
 							<li><a href="{% url 'about' %}">About</a></li>
 							<li><a href="{% url 'news' %}">News</a></li>
 							<li><a href="{% url 'contact' %}">Contact</a></li>
+							<li><a href="{% url 'membership' %}">Join us</a></li>
+							<li><a href="{% url 'gallery' %}">gallery</a></li>
 						</ul>
 					</div>
 				</div>
@@ -238,7 +242,12 @@
 	<!-- sticker js -->
 	<script src="{% static 'assets/js/sticker.js' %}"></script>
 	<!-- main js -->
+	{% comment %} <script src="{% static 'assets/js/glightbox.js' %}"></script> {% endcomment %}
+	{% comment %} <script src="{% static 'assets/js/glightbox.min.js' %}"></script> {% endcomment %}
+	{% comment %} <script src="{% static 'assets/js/isotope.pkgd.js' %}"></script> {% endcomment %}
+	{% comment %} <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script> {% endcomment %}
 	<script src="{% static 'assets/js/main.js' %}"></script>
+	{% comment %} <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script> {% endcomment %}
 
 	<script src="{% static 'assets/js/aos.js' %}"></script>
 
