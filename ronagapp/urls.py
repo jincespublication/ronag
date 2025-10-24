@@ -14,5 +14,6 @@ urlpatterns = [
     path("online", views.online, name="online"),
     path("gallery", views.gallery, name="gallery"),
     path("membership", views.membership, name="membership"),
+    path("cce", views.cce, name="cce"),
     path("singleNews/<int:post_id>", views.singleNews, name="singleNews")
 ]

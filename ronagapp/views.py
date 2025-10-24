@@ -31,7 +31,9 @@ def gallery(request):
 def membership(request):
     return render(request, 'membership.html')
 
+def cce(request):
 
+    return render(request, 'cce.html')
 
 def article(request):
     context = {"posts": posts}
