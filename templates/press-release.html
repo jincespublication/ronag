@@ -1,0 +1,94 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg-news">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>RoNAG news</p>
+						<h1>Press release</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<div style="display:flex; margin: 8vh 0  -8vh 0; text-align:center; justify-content:center; gap: 3em;">
+		<p >
+			<a  href="{% url 'news' %}">Ronag News</a>
+		</p>
+		<p>
+			<a  href="{% url 'online' %}">Online Posts</a>
+		</p>
+		<p>
+			<a style="padding:20px 20px; background-color:orange; border-radius: 20px; color:black;" href="{% url 'press-release' %}">Press release</a>
+		</p>
+	</div>
+
+	<!-- latest news -->
+	<div >
+		<div class="container">
+			<div >
+<div style="margin: 0px;  padding: 0px; height: 100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+    <!-- Loading spinner -->
+    <div class="loader" id="loader"></div>
+
+    <!-- PDF iframe -->
+    <iframe id="pdf-iframe" style="width: 80vw; height: 100%;  display:flex; flex-direction:column; align-items:center; justify-content:center;" src="https://drive.google.com/file/d/1Zgvs8au61G_8k3htZkE3QXNtJL8goT8P/preview" frameborder="0" type="application/pdf"></iframe>
+
+    <!-- Go back link -->
+    
+
+
+	<div style="display:flex; gap:2em ">
+		<div class="read">
+        	<a  href="{% url 'news' %}">Go back</a>
+    	</div>
+		<div class="read">
+			<a href="https://drive.google.com/uc?export=download&id=1Zgvs8au61G_8k3htZkE3QXNtJL8goT8P" download >
+			Download PDF
+			</a>
+		</div>
+		
+	</div>
+	
+
+    <script>
+        // Show the loader while the iframe is loading
+        const iframe = document.getElementById('pdf-iframe');
+        const loader = document.getElementById('loader');
+
+        iframe.onload = function() {
+            // Hide the loader and show the iframe once the content is loaded
+            loader.style.display = 'none';
+            iframe.style.display = 'block';
+        };
+    </script>
+</div>
+			</div>
+
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<div class="pagination-wrap">
+								<ul>
+									<li><a href="#">Prev</a></li>
+									<li><a href="#">1</a></li>
+									<li><a class="active" href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">Next</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end latest news -->
+{% endblock content %}

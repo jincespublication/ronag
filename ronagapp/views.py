@@ -35,6 +35,10 @@ def cce(request):
 
     return render(request, 'cce.html')
 
+def press_release(request):
+
+    return render(request, 'press-release.html')
+
 def article(request):
     context = {"posts": posts}
     return render(request, 'article.html', context)
