@@ -1,0 +1,30 @@
+
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+	
+	<!-- advertisement section -->
+	<div class="abt-section mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-bg">
+						<a href="https://www.youtube.com/watch?v=D_IpdM_7xPI" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-text">
+						<p class="top-sub">Since Year 2025</p>
+						<h2>We are <span class="orange-text">RoNAG</span></h2>
+						<p>RoNAG is led by a team of dedicated professionals, including environmental scientists, wildlife conservationists, academic researchers, and legal experts. </p>
+						<p>Our team is supported by a network of volunteers and partners who share our commitment to protecting Ghana’s natural heritage.</p>
+						<a href="{% url 'about' %}" class="boxed-btn mt-4">know more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end advertisement section -->
+
+
+{% endblock content %}
