@@ -46,70 +46,8 @@
         </div>
     </div> {% endcomment %}
     <!--PreLoader Ends-->
-	
-	<!-- header -->
-	<div class="top-header-area" id="sticker">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-sm-12 text-center">
-					<div class="main-menu-wrap">
-						<!-- logo -->
-						<div style=" margin-top: -25px; z-index: -1;" class="site-logo">
-							<a href="{% url 'index' %}">
-								<img style="height: 90px; width: 90px; object-fit: contain; object-position: center;"  src="{% static 'assets/img/logo.png' %}" alt="">
-							</a>
-							<a>Rights of Nature Ghana Movement</a>
-						</div>
-						<!-- logo -->
 
-						<!-- menu start -->
-						<nav  class="main-menu">
-							<ul>
-								<li class="current-list-item"><a href="/">Home</a>
-								</li>
-								<li><a href="{% url 'about' %}">About</a></li>
-								<li>
-									<a href="{% url 'news' %}">News</a>
-								</li>
-								<li><a href="{% url 'contact' %}">Contact</a></li>
-								<li><a href="{% url 'membership' %}">Join us</a></li>
-								<li><a href="{% url 'gallery' %}">gallery</a></li>
-								<li>
-									<div class="header-icons">
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-									</div>
-								</li>
-							</ul>
-						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-						<div class="mobile-menu"></div>
-						<!-- menu end -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end header -->
 	
-	<!-- search area -->
-	<div class="search-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="close-btn"><i class="fas fa-window-close"></i></span>
-					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end search area -->
-
 
     {% block content %}
     {% endblock content %}
@@ -148,58 +86,7 @@
 	</div>
 	<!-- end logo carousel -->
     
-    <!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">About us</h2>
-						<p>We act as the voice for nature, advocating on behalf of natural entities in Ghana. Our mission is to ensure that nature’s rights to exist, thrive, regenerate, and perform their natural functions are recognized and upheld.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
-						<ul>
-							<li> Kodie, Closer to the Kodie District Assembly, Ashanti-Ghana</li>
-							<li>rightsofnatureghanamovement@gmail.com</li>
-							<li>+233 24 456 8245
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Pages</h2>
-						<ul>
-							<li><a href="{% url 'index' %}">Home</a></li>
-							<li><a href="{% url 'about' %}">About</a></li>
-							<li><a href="{% url 'news' %}">News</a></li>
-							<li><a href="{% url 'contact' %}">Contact</a></li>
-							<li><a href="{% url 'membership' %}">Join us</a></li>
-							<li><a href="{% url 'gallery' %}">gallery</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="https://formspree.io/f/xldjrpro">
-							<input type="email" placeholder="Email" name="email">
-							<a href="{% url 'index' %}">
-
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
-						</a>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
-	
+  
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
@@ -237,13 +124,6 @@
 	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
 	<!-- magnific popup -->
 	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
-	<script>
-		$(document).ready(function() {
-			$('.popup-youtube').magnificPopup({
-				type: 'iframe'
-			});
-		});
-	</script>
 	<!-- mean menu -->
 	<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
 	<!-- sticker js -->
@@ -258,14 +138,6 @@
 	{% comment %} <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script> {% endcomment %}
 
 	<script src="{% static 'assets/js/aos.js' %}"></script>
-	<script>
-		$(document).ready(function() {
-			$('.popup-youtube').magnificPopup({
-				type: 'iframe'
-			});
-		});
-		</script>
-
 
     <script>
       AOS.init();
