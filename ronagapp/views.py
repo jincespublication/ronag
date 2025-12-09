@@ -35,6 +35,10 @@ def cce(request):
 
     return render(request, 'cce.html')
 
+def donate(request):
+
+    return render(request, 'donate.html')
+
 def press_release(request):
 
     return render(request, 'press-release.html')

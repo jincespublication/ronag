@@ -1,0 +1,154 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <head>
+       
+
+        <!-- CSS Libraries -->
+        <link href="{%static 'assets/lib/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{%static 'assets/lib/all.min.css' %}" rel="stylesheet">
+        <link href="{%static 'assets/lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+        <link href="{%static 'assets/lib/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{%static 'assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{%static 'assets/css/style2.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+
+
+
+        <!-- Carousel Start -->
+        <div class="carousel">
+            <div class="container-fluid">
+                <div class="owl-carousel">
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="{%static 'assets/img/donate/carousel-1.webp' %}" alt="Image">
+                        </div>
+                        <div class="carousel-text">
+                            <h1>Fund Legal Advocacy</h1>
+                            <br><br>
+                            <p>
+                                Your gift funds legal battles that give rivers and forests a voice in court.
+                            </p>
+                            <div class="carousel-btn">
+                                <a class="btn btn-custom" href="">Donate Now</a>
+                                {% comment %} <a class="btn btn-custom btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch Video</a> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="{%static 'assets/img/donate/carousel-2.webp' %}" alt="Image">
+                        </div>
+                        <div class="carousel-text">
+                            <h1>Donate with Impact</h1>
+                            <br><br>
+                            <p>
+                                Every cedi protects a tree, defends a river, and empowers a community.
+                            </p>
+                            <div class="carousel-btn">
+                                <a class="btn btn-custom" href="">Donate Now</a>
+                                {% comment %} <a class="btn btn-custom btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch Video</a> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="{%static 'assets/img/donate/carousel-3.jpg' %}" alt="Image">
+                        </div>
+                        <div class="carousel-text">
+                            <h1>Make Rights a Reality</h1>
+                            <br><br>
+                            <p>
+                                Donate today—help us turn Ghana's Rights of Nature from vision into law.
+                            </p>
+                            <div class="carousel-btn">
+                                <a class="btn btn-custom" href="">Donate Now</a>
+                                <a class="btn btn-custom btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+        
+        
+        <!-- Donate Start -->
+        <div class="donate" data-parallax="scroll" data-image-src="{%static 'assets/img/donate/donate.jpg' %}">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="donate-content">
+                            <div class="section-header">
+                                <p>Donate Now</p>
+                                <h2>Why Should I Donate?</h2>
+                                
+                            </div>
+                            <div class="donate-text">
+                                <p>
+                                    Your donation directly funds the legal, educational, and grassroots work that gives forests, rivers, and wildlife in Ghana a voice in courts, communities, and policymaking spaces. While nature cannot fill out a petition or hire a lawyer, you can ensure it has both through RoNAG.
+<br><br>
+Your Support Turns Rights into Reality <br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="donate-form">
+                            <form>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" placeholder="Name" required="required" />
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" class="form-control" placeholder="Email" required="required" />
+                                </div>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-custom active">
+                                        <input type="radio" name="options" checked> $10
+                                    </label>
+                                    <label class="btn btn-custom">
+                                        <input type="radio" name="options"> $20
+                                    </label>
+                                    <label class="btn btn-custom">
+                                        <input type="radio" name="options"> $30
+                                    </label>
+                                </div>
+                                <div>
+                                    <button class="btn btn-custom" type="submit">Donate Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Donate End -->
+
+
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- Pre Loader -->
+        {% comment %} <div id="loader" class="show">
+            <div class="loader"></div>
+        </div> {% endcomment %}
+
+        <!-- JavaScript Libraries -->
+        <script src="{%static 'assets/lib/jquery-3.4.1.min.js' %}"></script>
+        <script src="{%static 'assets/lib/bootstrap.bundle.min.js' %}"></script>
+        <script src="{%static 'assets/lib/easing/easing.min.js' %}"></script>
+        <script src="{%static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{%static 'assets/lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{%static 'assets/lib/counterup/counterup.min.js' %}"></script>
+        <script src="{%static 'assets/lib/parallax/parallax.min.js' %}"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="{%static 'assets/js/main3.js' %}"></script>
+    </body>
+{% endblock content %}

@@ -15,6 +15,7 @@ urlpatterns = [
     path("gallery", views.gallery, name="gallery"),
     path("membership", views.membership, name="membership"),
     path("cce", views.cce, name="cce"),
+    path("donate", views.donate, name="donate"),
     path("press-release", views.press_release, name="press-release"),
     path("singleNews/<int:post_id>", views.singleNews, name="singleNews")
 ]
