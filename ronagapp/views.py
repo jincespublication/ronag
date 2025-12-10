@@ -25,7 +25,7 @@ def contact(request):
 def gallery(request):
     image = Gallery.objects.all()
     image_group = ImageGroup.objects.all()
-    context = {"images":image, "image_groups":image_group}
+    context = {"images":list(reversed(image)), "image_groups":image_group}
     return render(request, "gallery.html", context)
 
 def membership(request):
