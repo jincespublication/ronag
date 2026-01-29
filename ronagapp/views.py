@@ -8,9 +8,7 @@ online_posts = OnlinePost.objects.all()
 post = {"posts": list(reversed(posts)), "onlinePosts": list(reversed(online_posts))}
 
 
-
 def index(request):
-
     return render(request, 'index.html', post)
 
 def about(request):
@@ -20,7 +18,6 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
-
 
 def gallery(request):
     image = Gallery.objects.all()
@@ -36,7 +33,6 @@ def cce(request):
     return render(request, 'cce.html')
 
 def donate(request):
-
     return render(request, 'donate.html')
 
 def press_release(request):
