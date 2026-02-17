@@ -32,6 +32,10 @@ def cce(request):
 
     return render(request, 'cce.html')
 
+def ron(request):
+
+    return render(request, 'ron.html')
+
 def donate(request):
     return render(request, 'donate.html')
 
