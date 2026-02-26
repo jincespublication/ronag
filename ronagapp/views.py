@@ -61,7 +61,7 @@ def online(request):
 
 def singleNews(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    context = {"post": post, "posts": posts}
+    context = {"post": post, "posts": list(reversed(posts))}
     return render(request, 'singleNews.html', context)
 
 def singleProduct(request):

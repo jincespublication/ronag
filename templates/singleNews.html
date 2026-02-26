@@ -135,11 +135,12 @@
 						<div class="recent-posts">
 							<h4>Recent Posts</h4>
 							<ul>
-								<li><a href="{% url 'article2' %}">The Unwilling Ghana</a></li>
-								<li><a href="{% url 'article' %}">Stop the impending Ecocide against nature</a></li>
+								
 								{% for poster in posts %}
 								<li><a href="{% url 'singleNews' poster.id %}">{{poster.title}}</a></li>
 								{% endfor %}
+								<li><a href="{% url 'article2' %}">The Unwilling Ghana</a></li>
+								<li><a href="{% url 'article' %}">Stop the impending Ecocide against nature</a></li>
 							</ul>
 						</div>
 						
