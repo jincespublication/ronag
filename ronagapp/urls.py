@@ -17,6 +17,8 @@ urlpatterns = [
     path("cce", views.cce, name="cce"),
     path("ron", views.ron, name="ron"),
     path("donate", views.donate, name="donate"),
+    path("success", views.success, name="success"),
+    path("sucess", views.success, name="sucess"),   # Added to catch the previous typo
     path("press-release", views.press_release, name="press-release"),
     path("singleNews/<int:post_id>", views.singleNews, name="singleNews")
 ]

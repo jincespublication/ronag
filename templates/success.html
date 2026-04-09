@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center" style="padding: 100px 0;">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div style="font-size: 80px; color: #28a745;">
+                <i class="far fa-check-circle"></i>
+            </div>
+            <h2 class="mt-4 mb-3">Payment Successful!</h2>
+            <p class="lead mb-4">
+                Thank you for your generous contribution. Your gift helps us continue our mission of funding legal advocacy for rivers and forests. 
+            </p>
+            {% if request.GET.reference %}
+                <p class="text-muted mb-4" style="word-break: break-all;">
+                    Transaction Reference: <strong>{{ request.GET.reference }}</strong>
+                </p>
+            {% endif %}
+            <a href="{% url 'index' %}" class="btn btn-custom mt-3">Go Home</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

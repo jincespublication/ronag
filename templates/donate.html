@@ -99,23 +99,33 @@ Your Support Turns Rights into Reality <br><br>
                     </div>
                     <div class="col-lg-5">
                         <div class="donate-form">
-                            <form>
+                            <form method="POST" action="{% url 'donate' %}">
+                                {% csrf_token %}
+                                {% if error %}
+                                    <div class="alert alert-danger">{{ error }}</div>
+                                {% endif %}
+                                {% if request.GET.reference %}
+                                    <div class="alert alert-success">Thank you for your donation! Payment successful. (Ref: {{ request.GET.reference }})</div>
+                                {% endif %}
                                 <div class="control-group">
-                                    <input type="text" class="form-control" placeholder="Name" required="required" />
+                                    <input type="text" name="name" class="form-control" placeholder="Name" required="required" />
                                 </div>
                                 <div class="control-group">
-                                    <input type="email" class="form-control" placeholder="Email" required="required" />
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" />
                                 </div>
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
                                     <label class="btn btn-custom active">
-                                        <input type="radio" name="options" checked> $10
+                                        <input type="radio" name="amount" value="10" checked> GHS 10
                                     </label>
                                     <label class="btn btn-custom">
-                                        <input type="radio" name="options"> $20
+                                        <input type="radio" name="amount" value="20"> GHS 20
                                     </label>
                                     <label class="btn btn-custom">
-                                        <input type="radio" name="options"> $30
+                                        <input type="radio" name="amount" value="30"> GHS 30
                                     </label>
+                                </div>
+                                <div class="control-group">
+                                    <input type="number" name="custom_amount" class="form-control" placeholder="Specific Amount (Optional)" min="1" step="any" />
                                 </div>
                                 <div>
                                     <button class="btn btn-custom" type="submit">Donate Now</button>

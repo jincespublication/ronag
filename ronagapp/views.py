@@ -1,4 +1,9 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
+from django.urls import reverse
+from django.conf import settings
+import urllib.request
+import json
+
 
 from .models import *
 
@@ -37,6 +42,48 @@ def ron(request):
     return render(request, 'ron.html')
 
 def donate(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        custom_amount = request.POST.get("custom_amount")
+        
+        try:
+            if custom_amount and float(custom_amount) > 0:
+                final_amount = float(custom_amount)
+            elif amount:
+                final_amount = float(amount)
+            else:
+                final_amount = 10.0
+        except (TypeError, ValueError):
+            final_amount = 10.0
+            
+        amount_in_cents = int(final_amount * 100)
+        
+        url = "https://api.paystack.co/transaction/initialize"
+        data = {
+            "email": email,
+            "amount": amount_in_cents,
+            "callback_url": request.build_absolute_uri(reverse('success'))
+        }
+        data_json = json.dumps(data).encode("utf-8")
+        headers = {
+            "Authorization": f"Bearer {settings.PAYSTACK_SECRET_KEY}",
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0"
+        }
+        
+        req = urllib.request.Request(url, data=data_json, headers=headers)
+        try:
+            with urllib.request.urlopen(req) as response:
+                result = json.loads(response.read().decode("utf-8"))
+                if result.get("status"):
+                    auth_url = result["data"]["authorization_url"]
+                    return redirect(auth_url)
+        except urllib.error.URLError as e:
+            error_msg = f"Payment initialization failed: {e.reason}"
+            return render(request, "donate.html", {"error": error_msg})
+
     return render(request, 'donate.html')
 
 def press_release(request):
@@ -58,6 +105,9 @@ def news(request):
 def online(request):
     
     return render(request, 'online.html', post)
+
+def success(request):
+    return render(request, 'success.html')
 
 def singleNews(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
