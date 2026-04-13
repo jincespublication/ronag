@@ -105,6 +105,11 @@
 	.single-project-img img {
 	    width: 100%;
 	}
+	.abt-bg, .abt-bg22 {
+		min-height: 350px !important;
+		height: 60vw !important;
+		border-radius: 10px;
+	}
 	.site-logo a img {
 	    max-width: 150px;
 	}
@@ -206,6 +211,12 @@
 
 	.site-logo img {
 	    max-width: 150px;
+	}
+
+	.abt-bg, .abt-bg22 {
+		min-height: 350px !important;
+		height: 75vw !important;
+		border-radius: 10px;
 	}
 
 	.responsive-menu-wrap {

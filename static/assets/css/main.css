@@ -2312,6 +2312,7 @@ a.video-play-btn {
 .abt-bg {
   background-image: url("../img/about.jpg");
   height: 100%;
+  min-height: 100%;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -2325,6 +2326,7 @@ a.video-play-btn {
 .abt-bg22 {
   background-image: url("../img/water_analysis.jpg");
   height: 100%;
+  min-height: 100%;
   width: 100%;
   background-size: cover;
   background-position: center;
