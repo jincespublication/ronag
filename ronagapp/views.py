@@ -41,6 +41,10 @@ def ron(request):
 
     return render(request, 'ron.html')
 
+def water_analysis(request):
+
+    return render(request, 'water_analysis.html')
+
 def donate(request):
     if request.method == "POST":
         email = request.POST.get("email")

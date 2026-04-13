@@ -16,6 +16,7 @@ urlpatterns = [
     path("membership", views.membership, name="membership"),
     path("cce", views.cce, name="cce"),
     path("ron", views.ron, name="ron"),
+    path("water_analysis", views.water_analysis, name="water_analysis"),
     path("donate", views.donate, name="donate"),
     path("success", views.success, name="success"),
     path("sucess", views.success, name="sucess"),   # Added to catch the previous typo

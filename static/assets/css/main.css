@@ -2322,7 +2322,31 @@ a.video-play-btn {
   overflow: hidden;
 }
 
+.abt-bg22 {
+  background-image: url("../img/water_analysis.jpg");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
 .abt-bg:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #051922;
+  opacity: 0.3;
+}
+
+.abt-bg22:after {
   position: absolute;
   left: 0;
   top: 0;
