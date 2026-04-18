@@ -121,3 +121,7 @@ def singleNews(request, post_id):
 def singleProduct(request):
     return render(request, 'singleProduct.html')
 
+def reports(request):
+    report_list = Report.objects.all().order_by('-date_uploaded')
+    context = {"reports": report_list}
+    return render(request, 'reports.html', context)

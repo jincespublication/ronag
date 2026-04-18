@@ -88,3 +88,18 @@ class Gallery(models.Model):
         except:
             url = " " 
         return url
+
+class Report(models.Model):
+    name = models.CharField(max_length=200)
+    url = models.URLField(max_length=500, help_text="Paste the Google Drive or PDF URL here", blank=True, null=True)
+    date_uploaded = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def fileURL(self):
+        url = self.url
+        if url and 'drive.google.com' in url and '/view' in url:
+            return url.replace('/view', '/preview')
+        return url
