@@ -19,6 +19,24 @@ class Team(models.Model):
         except:
             url = " " 
         return url
+
+
+class YouthTeam(models.Model):
+    name = models.CharField(max_length = 40)
+    profile = models.CharField(max_length = 200)
+    description = models.CharField(max_length = 1000, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to="team/")
+
+    def __str__(self):
+        return self.name
+    
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = " " 
+        return url
     
 
 class Post(models.Model):
@@ -102,4 +120,4 @@ class Report(models.Model):
         url = self.url
         if url and 'drive.google.com' in url and '/view' in url:
             return url.replace('/view', '/preview')
-        return url
+        return url
