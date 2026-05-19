@@ -28,6 +28,21 @@
 					</div>
 				</div>
 			</div>
+
+
+
+			<div style="display:flex; margin: 0vh 0  60px 0; text-align:center; justify-content:center; gap: 3em;">
+				<p >
+					<a style="padding:20px 20px; background-color:orange; border-radius: 20px; color:black;" href="{% url 'about' %}">Core members</a>
+				</p>
+				<p>
+					<a href="{% url 'youth-wing' %}">Youth Wing</a>
+				</p>
+			</div>
+
+
+
+
 			<div class="row">
 				{% for team in teams %}
 				<div class="col-lg-4 col-md-6">

@@ -113,6 +113,11 @@ def online(request):
 def success(request):
     return render(request, 'success.html')
 
+def youth_wing(request):
+    youth_team = YouthTeam.objects.all()
+    context = {'youth_team': youth_team}
+    return render(request, 'youth-wing.html', context)
+
 def singleNews(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     context = {"post": post, "posts": list(reversed(posts))}

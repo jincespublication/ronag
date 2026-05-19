@@ -28,12 +28,27 @@
 					</div>
 				</div>
 			</div>
+
+
+            <div style="display:flex; margin: 0vh 0  60px 0; text-align:center; justify-content:center; gap: 3em;">
+				<p >
+					<a  href="{% url 'about' %}">Core members</a>
+				</p>
+				<p>
+					<a style="padding:20px 20px; background-color:orange; border-radius: 20px; color:black;" href="{% url 'youth-wing' %}">Youth Wing</a>
+				</p>
+			</div>
+
+
+
+
+
 			<div class="row">
-				{% for team in teams %}
+				{% for youth_team in youth_team %}
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item" >
 						<div class="team-bg" style="overflow: hidden; ">
-							<img style="width: 100%; height: 100%; object-position: center; object-fit: cover;" src={{team.imageURL}} alt="">
+							<img style="width: 100%; height: 100%; object-position: center; object-fit: cover;" src={{youth_team.imageURL}} alt="">
 							<ul class="social-link-team">
 								<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -41,13 +56,13 @@
 							</ul>
 						</div>
 						<div>
-							<h5>{{team.name}}</h5>
+							<h5>{{youth_team.name}}</h5>
 						</div>
 						<div>
-							<p class="pp">{{team.profile}} </p>
+							<p class="pp">{{youth_team.profile}} </p>
 						</div>
 						<div>
-							<p class="description">({{team.description}})</p>
+							<p class="description">({{youth_team.description}})</p>
 						</div>
 					</div>
 					
