@@ -59,6 +59,151 @@ Version: 1.0
   line-height: 2em;
 }
 
+/* Poem Section Styles */
+.welcome-poem-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 80px auto 0 auto;
+  text-align: left;
+  border-left: 5px solid #F28123;
+}
+
+.poem-image-wrapper {
+  flex: 1;
+  min-width: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.poem-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.welcome-poem-container:hover .poem-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.poem-content {
+  flex: 1.3;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+}
+
+.poem-content::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  font-size: 10rem;
+  font-family: "Georgia", serif;
+  color: rgba(242, 129, 35, 0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.poem-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: rgba(0, 153, 118, 0.1);
+  color: #009976;
+  padding: 5px 15px;
+  font-size: 0.8em;
+  font-weight: 700;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+.poem-title {
+  font-family: "Poppins", sans-serif;
+  color: #051922;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.poem-stanza {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333333;
+  margin-bottom: 22px;
+}
+
+.poem-stanza:last-of-type {
+  margin-bottom: 25px;
+}
+
+.poem-author {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #051922;
+  font-size: 1.05rem;
+  border-top: 1px solid #eeeeee;
+  padding-top: 20px;
+}
+
+.poem-author .author-name {
+  color: #F28123;
+}
+
+.poem-author .author-title {
+  font-weight: 400;
+  color: #666666;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+/* Responsiveness for Poem Section */
+@media only screen and (max-width: 991px) {
+  .welcome-poem-container {
+    flex-direction: column;
+    margin: 60px 20px 0 20px;
+  }
+  .poem-image-wrapper {
+    height: 350px;
+  }
+  .poem-content {
+    padding: 40px 30px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .welcome-poem-container {
+    margin: 50px 10px 0 10px;
+  }
+  .poem-image-wrapper {
+    height: 250px;
+  }
+  .poem-content {
+    padding: 30px 20px;
+  }
+  .poem-title {
+    font-size: 1.6rem;
+  }
+  .poem-stanza {
+    font-size: 1.05rem;
+  }
+}
+
+
 
 .why-info div {
   max-width: 500px;
